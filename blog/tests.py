@@ -19,3 +19,15 @@ class BlogTestCase(TestCase):
         exp_data = "Test"
         self.assertEqual(exp_data, response.content.decode())
         self.assertEqual(response.status_code, 404)
+
+    def test_get_about(self):
+        response = self.client.get(reverse("about-page"))
+        exp_data = "Страница о нас"
+        self.assertEqual(exp_data, response.content.decode())
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_contacts(self):
+        response = self.client.get(reverse("contacts-page"))
+        exp_data = "Страница с контактами"
+        self.assertEqual(exp_data, response.content.decode())
+        self.assertEqual(response.status_code, 200)

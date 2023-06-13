@@ -8,3 +8,11 @@ def index(request):
 
 def test_page(request):
     return HttpResponse("Test", status=404)
+
+
+def get_about(request):
+    return HttpResponse("Страница о нас")
+
+
+def get_contacts(request):
+    return HttpResponse("Страница с контактами")
