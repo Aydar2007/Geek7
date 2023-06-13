@@ -51,3 +51,11 @@ from django.http import HttpResponse
 #     if request.method == "GET":
 #         print(request.get_host())
 #     return HttpResponse("Hello", status=500)
+
+#
+def get_template(request):
+    context = {
+        "zagolovok": "Заголовок из контекста",
+        "my_list": [1, 2, 3, 4, 5],
+    }
+    return render(request, "examples/test_template.html", context=context)
